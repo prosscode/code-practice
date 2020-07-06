@@ -19,6 +19,8 @@ public class SocketServer1 {
         OutputStream out = null;
         try {
             serverSocket = new ServerSocket(8888);
+            //Java中非阻塞同步IO模式通过设置此方法实现
+//            serverSocket.setSoTimeout(1000);
             while (true) {
                 System.out.println("启动服务，等待消息...");
                 Socket accept = serverSocket.accept();
