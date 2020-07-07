@@ -1,4 +1,4 @@
-package pross.code.io.thread;
+package pross.code.io;
 
 import java.io.IOException;
 import java.io.InputStream;
