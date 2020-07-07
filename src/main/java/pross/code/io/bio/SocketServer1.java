@@ -1,4 +1,4 @@
-package pross.code.io.thread;
+package pross.code.io.bio;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -7,7 +7,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 /**
- * @describe: 服务器端（SocketServer1）单个线程处理
+ * @describe: 服务器端（NIOSocketServer）单个线程处理
  * @author: 彭爽 pross.peng
  * @date: 2020/07/05
  */
