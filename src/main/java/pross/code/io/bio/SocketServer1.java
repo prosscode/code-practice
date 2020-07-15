@@ -31,14 +31,18 @@ public class SocketServer1 {
                 int maxLen = 2048;
                 byte[] contextBytes = new byte[maxLen];
                 //这里也会被阻塞，直到有数据准备好
-                int realLen = in.read(contextBytes, 0, maxLen);
-                //读取信息
-                String message = new String(contextBytes, 0, realLen);
-                //下面打印信息
+                StringBuffer message = new StringBuffer();
+                int realLen=0;
+                while((realLen=in.read(contextBytes,0,maxLen))!=-1){
+                    message.append(new String(contextBytes,0,realLen));
+                    if(message.indexOf("over")!=-1){
+                        break;
+                    }
+                }
                 System.out.println("服务器收到来自于端口：" + sourcePort + "的信息：" + message);
 
                 //回应信息
-                if(StringUtils.equals(message,"exit")){
+                if(StringUtils.equals(message.toString(),"exit")){
                     out.write("正在关闭服务端！".getBytes());
                     out.flush();
                     break;
