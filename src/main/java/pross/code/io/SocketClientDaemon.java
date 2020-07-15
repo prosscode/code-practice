@@ -4,7 +4,7 @@ import java.util.concurrent.CountDownLatch;
 
 /**
  * @describe:
- *      模拟20个客户端并发请求，服务器端使用单线程
+ *      模拟20个客户端并发请求
  * @author: 彭爽 pross.peng
  * @date: 2020/07/05
  */
