@@ -10,7 +10,7 @@ import java.net.SocketTimeoutException;
 /**
  * @describe: 服务器端（NIOSocketServer）单个线程处理
  * @author: 彭爽 pross.peng
- * @date: 2020/07/05
+ * @date: 2020/07/06
  */
 public class NIOSocketServer {
 
@@ -35,9 +35,10 @@ public class NIOSocketServer {
                      * 主线程在这里就可以做一些事情，记为X
                      */
                     synchronized (NIOSocketServer.xWait) {
-                        System.out.println("这次没有从底层接收到任务数据报文，等待10毫秒，模拟事件X的处理时间");
-                        NIOSocketServer.xWait.wait(10);
+                        System.out.println("没有从底层接收到任何数据，等待1秒，模拟事件X的处理时间");
+                        NIOSocketServer.xWait.wait(1000);
                     }
+                    // 继续等待
                     continue;
                 }
 
@@ -47,12 +48,12 @@ public class NIOSocketServer {
                 Integer sourcePort = accept.getPort();
                 int maxLen = 2048;
                 byte[] contextBytes = new byte[maxLen];
-                //设置成非阻塞方式，这样read信息的时候，又可以做一些其他事情
+                //设置成非阻塞方式，这样read()信息的时候，又可以做一些其他事情
                 int realLen;
                 StringBuffer message = new StringBuffer();
                 BIORead:while (true){
                     try {
-                        accept.setSoTimeout(10);
+                        accept.setSoTimeout(1000);
                         while((realLen = in.read(contextBytes, 0, maxLen)) != -1) {
                             message.append(new String(contextBytes, 0, realLen));
                             // 接收到over时，结束
@@ -65,14 +66,10 @@ public class NIOSocketServer {
                          * 执行到这里，说明本次read没有接收到任何数据流
                          * 主线程在这里又可以做一些事情，记为Y
                          */
-                        System.out.println("这次没有从底层接收到任务数据报文，等待10毫秒，模拟事件Y的处理时间");
+                        System.out.println("没有从客户端收到任何结束标志，等待1秒，模拟事件Y的处理时间");
                         continue ;
                     }
                 }
-                //这里也会被阻塞，直到有数据准备好
-//                int realLen = in.read(contextBytes, 0, maxLen);
-                //读取信息
-//                String message = new String(contextBytes, 0, realLen);
                 //下面打印信息
                 System.out.println("服务器收到来自于端口：" + sourcePort + "的信息：" + message);
 

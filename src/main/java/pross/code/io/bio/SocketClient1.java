@@ -43,11 +43,11 @@ public class SocketClient1 {
             clientRequest = socket.getOutputStream();
             clientResponse = socket.getInputStream();
 
-            // 发送请求信息
-//            sendMessage(clientRequest,"我要请求服务器");
+            // 第一次请求 发送请求信息
+            sendMessage(clientRequest,"我要请求服务器\n");
 //            receiveMessage(clientResponse);
-            // 关闭指令
-            sendMessage(clientRequest,"exit");
+            // 第二次请求 over
+            sendMessage(clientRequest,"第二次请求服务器 over");
             receiveMessage(clientResponse);
 
         } catch (IOException e) {
