@@ -14,8 +14,8 @@ import java.util.Random;
  * @author: 彭爽 pross.peng
  * @date: 2020/05/08
  */
-public class producerStep {
-    private static Logger logger = LoggerFactory.getLogger(producerStep.class);
+public class ProducerStep {
+    private static Logger logger = LoggerFactory.getLogger(ProducerStep.class);
 
     /**
      * producer开发五步走：
