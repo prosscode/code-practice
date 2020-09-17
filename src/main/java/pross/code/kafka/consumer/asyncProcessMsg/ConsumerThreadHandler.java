@@ -1,4 +1,4 @@
-package pross.code.kafka.asyncProcessMsg;
+package pross.code.kafka.consumer.asyncProcessMsg;
 
 /**
  * @describe:
