@@ -7,7 +7,27 @@ package pross.code.test;
  */
 public class TestCommit {
 
+    public static void f() {
+        String[] a = new String[2];
+        Object[] b = a;
+        a[0] = "hi";
+        b[1] = Integer.valueOf(42).toString();
+//        b[1] = "hey";
+
+        for (Object o : b) {
+            System.out.println(o);
+        }
+
+        System.out.println();
+
+        for (String s : a) {
+            System.out.println(s);
+        }
+    }
+
     public static void main(String[] args) {
-        System.out.println("hello world");
+        TestCommit.f();
+//        System.out.println("hello world");
+
     }
 }
