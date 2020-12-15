@@ -20,17 +20,24 @@ under the License.
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>pross.code</groupId>
+	<groupId>code.dream</groupId>
 	<artifactId>code-practice</artifactId>
 	<version>1.0-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<modules>
+		<module>code-flink</module>
+		<module>code-java</module>
+		<module>untitled</module>
+		<module>code-algo</module>
+		<module>code-kafka</module>
+	</modules>
+	<packaging>pom</packaging>
 
 	<name>code-practice</name>
 	<url>http://www.myorganization.org</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<flink.version>1.9.3</flink.version>
+		<flink.version>1.10.2</flink.version>
 		<java.version>1.8</java.version>
         <hadoop.verison>3.1.1</hadoop.verison>
 		<scala.binary.version>2.11</scala.binary.version>
@@ -77,13 +84,6 @@ under the License.
             <version>3.4</version>
         </dependency>
 
-        <!--thrift-->
-        <dependency>
-            <groupId>org.apache.thrift</groupId>
-            <artifactId>libthrift</artifactId>
-            <version>0.12.0</version>
-        </dependency>
-
         <!--hive-->
         <dependency>
             <groupId>org.apache.hive</groupId>
@@ -91,13 +91,14 @@ under the License.
             <version>${hadoop.verison}</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.apache.hive</groupId>
-            <artifactId>hive-jdbc</artifactId>
-            <version>3.1.1</version>
-        </dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.thrift/libthrift -->
+		<dependency>
+			<groupId>org.apache.thrift</groupId>
+			<artifactId>libthrift</artifactId>
+			<version>0.12.0</version>
+		</dependency>
 
-        <!--junit test-->
+		<!--junit test-->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -105,7 +106,6 @@ under the License.
             <scope>test</scope>
         </dependency>
 
-        <!--kafka-->
         <dependency>
             <groupId>org.apache.kafka</groupId>
             <artifactId>kafka-clients</artifactId>
@@ -119,10 +119,10 @@ under the License.
             <version>${hadoop.verison}</version>
         </dependency>
 
-		<!--calcite-->
+		<!--code.java.calcite-->
         <dependency>
-            <groupId>org.apache.calcite</groupId>
-            <artifactId>calcite-core</artifactId>
+            <groupId>org.apache.code.java.calcite</groupId>
+            <artifactId>code.java.calcite-core</artifactId>
             <version>1.21.0</version>
         </dependency>
 
@@ -134,6 +134,7 @@ under the License.
 			<version>${flink.version}</version>
 			<scope>provided</scope>
 		</dependency>
+
 		<dependency>
 			<groupId>org.apache.flink</groupId>
 			<artifactId>flink-streaming-java_${scala.binary.version}</artifactId>
@@ -141,68 +142,23 @@ under the License.
 			<scope>provided</scope>
 		</dependency>
 
-		<!-- Add connector dependencies here. They must be in the default scope (compile). -->
-
-		<!-- Example:
-		<dependency>
-			<groupId>org.apache.flink</groupId>
-			<artifactId>flink-connector-kafka-0.10_${scala.binary.version}</artifactId>
-			<version>${flink.version}</version>
-		</dependency>
-		-->
-
         <!-- These dependencies are excluded from the application JAR by default. -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
             <version>1.7.7</version>
-            <scope>runtime</scope>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>
             <version>2.13.2</version>
-            <scope>runtime</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>dnsjava</groupId>
-            <artifactId>dnsjava</artifactId>
-            <version>2.1.1</version>
         </dependency>
 
     </dependencies>
 
     <build>
         <plugins>
-
-            <!--findbugs plugin-->
-            <!--<plugin>-->
-            <!--<groupId>org.codehaus.mojo</groupId>-->
-                <!--<artifactId>findbugs-maven-plugin</artifactId>-->
-                <!--<version>3.0.5</version>-->
-                <!--<configuration>-->
-                    <!--&lt;!&ndash; 设置分析工作的等级，可以为Min、Default和Max &ndash;&gt;-->
-                    <!--<effort>Low</effort>-->
-                    <!--&lt;!&ndash; Low、Medium和High (Low最严格) High只扫描严重错误。建议用Medium&ndash;&gt;-->
-                    <!--<threshold>Medium</threshold>-->
-                    <!--<failOnError>true</failOnError>-->
-                    <!--<includeTests>true</includeTests>-->
-                <!--</configuration>-->
-                <!--<executions>-->
-                    <!--<execution>-->
-                        <!--<id>run-findbugs</id>-->
-                        <!--&lt;!&ndash; 在package(也可设为compile) 阶段触发执行findbugs检查，比如执行 mvn clean package &ndash;&gt;-->
-                        <!--<phase>package</phase>-->
-                        <!--<goals>-->
-                            <!--<goal>check</goal>-->
-                        <!--</goals>-->
-                    <!--</execution>-->
-                <!--</executions>-->
-            <!--</plugin>-->
-
-
 			<!-- Java Compiler -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
