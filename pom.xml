@@ -120,11 +120,12 @@ under the License.
         </dependency>
 
 		<!--code.java.calcite-->
-        <dependency>
-            <groupId>org.apache.code.java.calcite</groupId>
-            <artifactId>code.java.calcite-core</artifactId>
-            <version>1.21.0</version>
-        </dependency>
+		<dependency>
+			<groupId>org.apache.calcite</groupId>
+			<artifactId>calcite-core</artifactId>
+			<version>1.21.0</version>
+		</dependency>
+
 
 		<!-- Apache Flink dependencies -->
 		<!-- These dependencies are provided, because they should not be packaged into the JAR file. -->
@@ -154,6 +155,12 @@ under the License.
             <artifactId>log4j-core</artifactId>
             <version>2.13.2</version>
         </dependency>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.4</version>
+		</dependency>
 
     </dependencies>
 
