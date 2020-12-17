@@ -40,3 +40,5 @@ code-flink/src/test/
 code-java/src/test/
 code-kafka/src/test/
 
+/code-kafka/target/classes/log4j.properties
+/code-java/target/classes/log4j.properties
