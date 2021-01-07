@@ -28,6 +28,11 @@
             <artifactId>hive-exec</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>com.alibaba.otter</groupId>
+            <artifactId>canal.client</artifactId>
+        </dependency>
+
         <!--common-->
         <dependency>
             <groupId>org.apache.commons</groupId>
