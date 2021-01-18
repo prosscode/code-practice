@@ -21,6 +21,7 @@ public class MMAPvsFile {
         FileChannel channel = randomAccessFile.getChannel();
         System.out.println("FileChannel初始化时间：" + (System.currentTimeMillis() - start) + "ms");
 
+        start = System.currentTimeMillis();
         //内存映射文件，模式是READ_WRITE，如果文件不存在，就会被创建
         MappedByteBuffer mappedByteBuffer1 = channel.map(FileChannel.MapMode.READ_WRITE, 0, 128 * 1024 * 1024);
         MappedByteBuffer mappedByteBuffer2 = channel.map(FileChannel.MapMode.READ_WRITE, 0, 128 * 1024 * 1024);
