@@ -7,6 +7,7 @@ import org.apache.kafka.clients.producer.RecordMetadata;
 import org.apache.kafka.common.serialization.StringSerializer;
 
 import java.util.Properties;
+import java.util.concurrent.Future;
 
 /**
  * @describe: 模拟产生测试数据
@@ -31,11 +32,12 @@ public class TestKafkaProducer {
         // 生产消息
         while(true){
             String message = "";
-
-            producer.send(new ProducerRecord<>(topic, message), new Callback() {
+            Future<RecordMetadata> future = producer.send(new ProducerRecord<>(topic, message), new Callback() {
                 @Override
-                public void onCompletion(RecordMetadata metadata, Exception exception) {
-
+                public void onCompletion(RecordMetadata recordMetadata, Exception e) {
+                    if(e != null) {
+                        // do something
+                    }
                 }
             });
             Thread.sleep(1000);
