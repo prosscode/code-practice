@@ -39,4 +39,6 @@ code-flink/target/
 code-java/target/
 code-kafka/target/
 
+data/
+
 
