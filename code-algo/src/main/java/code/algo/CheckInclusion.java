@@ -2,7 +2,7 @@ package code.algo;
 
 /**
  * @describe: 字符串的排列
- * @author: 彭爽 pross.peng
+ * @author:  shuang.peng
  * @date: 2020/08/13
  */
 public class CheckInclusion {

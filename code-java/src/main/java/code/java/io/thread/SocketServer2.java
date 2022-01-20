@@ -8,7 +8,7 @@ import java.net.Socket;
 
 /**
  * @describe: 服务器端（SocketServer2）多线程处理，实则上还是阻塞io
- * @author: 彭爽 pross.peng
+ * @author:  shuang.peng
  * @date: 2020/07/05
  */
 public class SocketServer2 {

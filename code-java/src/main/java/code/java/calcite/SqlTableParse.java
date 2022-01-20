@@ -6,7 +6,7 @@ import static org.apache.calcite.sql.SqlKind.IDENTIFIER;
 
 /**
  * @describe: code.java.calcite demo
- * @author: 彭爽 pross.peng
+ * @author:  shuang.peng
  * @date: 2020/05/20
  */
 public class SqlTableParse {

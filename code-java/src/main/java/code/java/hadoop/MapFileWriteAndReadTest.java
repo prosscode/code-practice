@@ -12,8 +12,8 @@ import java.io.IOException;
 
 /**
  * @describe: key out of order
- *      mapfile 继承 writeable comparable，对key进行了排序，提供查询功能
- * @author: 彭爽pross
+ * mapfile 继承 writeable comparable，对key进行了排序，提供查询功能
+ * @author: pross
  * @date: 2019/05/19
  */
 public class MapFileWriteAndReadTest {
@@ -25,9 +25,9 @@ public class MapFileWriteAndReadTest {
 
         MapFile.Writer writer;
         writer = new MapFile.Writer(conf, fs, path.toString(), IntWritable.class, Text.class);
-        for(int i =0;i<100;i++){
+        for (int i = 0; i < 100; i++) {
             // 写操作
-            writer.append(new IntWritable(i),new Text("hello world"));
+            writer.append(new IntWritable(i), new Text("hello world"));
         }
         IOUtils.closeStream(writer);
 
@@ -36,8 +36,8 @@ public class MapFileWriteAndReadTest {
         reader = new MapFile.Reader(fs, path.toString(), conf);
         IntWritable key = new IntWritable();
         Text value = new Text();
-        while(reader.next(key,value)){
-            System.out.println(key.toString()+"====="+value.toString());
+        while (reader.next(key, value)) {
+            System.out.println(key.toString() + "=====" + value.toString());
         }
         IOUtils.closeStream(reader);
     }

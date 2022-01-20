@@ -11,7 +11,7 @@ import java.util.concurrent.Future;
 
 /**
  * @describe: 模拟产生测试数据
- * @author: 彭爽 pross.peng
+ * @author:  shuang.peng
  * @date: 2020/08/09
  */
 public class TestKafkaProducer {

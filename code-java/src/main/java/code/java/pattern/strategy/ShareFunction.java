@@ -5,7 +5,7 @@ import java.util.List;
 
 /**
  * @describe:  多个连接的分享功能
- * @author: 彭爽 pross.peng
+ * @author:  shuang.peng
  * @date: 2020/04/27
  */
 public class ShareFunction {

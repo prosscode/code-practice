@@ -16,7 +16,7 @@ import java.util.List;
  *    缓存工作机制：通过executionEnvironment注册缓存文件，
  *               当程序执行时，flink自动将注册的缓存文件复制到所有的tm节点的本地文件系统
  *               可以通过为这个缓存文件起一个名字，方便从tm节点的本地文件系统访问
- * @author: 彭爽 pross.peng
+ * @author:  shuang.peng
  * @date: 2020/06/20
  */
 public class DistributedCache {

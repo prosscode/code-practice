@@ -10,7 +10,7 @@ import java.io.IOException;
 
 /**
  * @describe: 仿造hadoop基本包装类型。自定义一个writable，包含int和text两种类型。
- * @author: 彭爽pross
+ * @author: pross
  * @date: 2019/05/19
  */
 public class TextAndIntWritableComparable implements WritableComparable<TextAndIntWritableComparable> {

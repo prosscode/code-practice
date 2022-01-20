@@ -1,4 +1,4 @@
-package code.flink.streaming;
+package code.flink.stream;
 
 import org.apache.flink.api.common.ExecutionConfig;
 import org.apache.flink.streaming.api.TimeCharacteristic;
@@ -6,7 +6,7 @@ import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 
 /**
  * @describe:
- * @author: 彭爽 pross.peng
+ * @author: shuang.peng
  * @date: 2020/08/07
  */
 public class InitUtils {

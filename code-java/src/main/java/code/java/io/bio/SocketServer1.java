@@ -10,7 +10,7 @@ import java.net.Socket;
 
 /**
  * @describe: 服务器端（BIOSocketServer）单个线程处理
- * @author: 彭爽 pross.peng
+ * @author:  shuang.peng
  * @date: 2020/07/05
  */
 public class SocketServer1 {

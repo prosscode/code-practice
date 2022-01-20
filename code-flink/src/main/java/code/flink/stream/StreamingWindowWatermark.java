@@ -1,4 +1,4 @@
-package code.flink.streaming;
+package code.flink.stream;
 
 import org.apache.flink.api.common.functions.MapFunction;
 import org.apache.flink.api.java.tuple.Tuple;
@@ -24,7 +24,7 @@ import java.util.Iterator;
 
 /**
  * @describe: 测试eventime+watermark案例
- * @author: 彭爽 pross.peng
+ * @author:  shuang.peng
  * @date: 2020/08/07
  */
 public class StreamingWindowWatermark {

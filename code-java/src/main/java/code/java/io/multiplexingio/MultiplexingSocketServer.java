@@ -11,7 +11,7 @@ import java.util.Iterator;
 
 /**
  * @describe: 服务端多路复用IO，客户端是否使用多路复用IO,对整个系统架构的性能提升相关性不是很大
- * @author: 彭爽 pross.peng
+ * @author:  shuang.peng
  * @date: 2020/07/15
  */
 public class MultiplexingSocketServer {

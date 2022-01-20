@@ -2,7 +2,7 @@ package code.algo;
 
 /**
  * @describe: 最长公共前缀
- * @author: 彭爽 pross.peng
+ * @author:  shuang.peng
  * @date: 2020/08/12
  */
 public class LongestCommonPrefix {

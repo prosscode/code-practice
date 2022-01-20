@@ -3,7 +3,7 @@ package code.algo;
 /**
  * @describe: 求N的阶和
  * 不使用乘除法和for、while、if、else、switch、case等条件判断
- * @author: 彭爽 pross.peng
+ * @author:  shuang.peng
  * @date: 2020/09/16
  */
 public class SumNums {

@@ -5,7 +5,7 @@ import java.util.concurrent.CountDownLatch;
 /**
  * @describe:
  *      模拟20个客户端并发请求
- * @author: 彭爽 pross.peng
+ * @author:  shuang.peng
  * @date: 2020/07/05
  */
 public class SocketClientDaemon {

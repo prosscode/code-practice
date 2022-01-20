@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * @describe: result table node
- * @author: 彭爽 pross.peng
+ * @author:  shuang.peng
  * @date: 2020/05/20
  */
 public class SqlParseResult {

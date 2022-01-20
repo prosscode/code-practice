@@ -11,7 +11,7 @@ import java.util.Random;
 
 /**
  * @describe:
- * @author: 彭爽 pross.peng
+ * @author:  shuang.peng
  * @date: 2020/05/08
  */
 public class ProducerStep {

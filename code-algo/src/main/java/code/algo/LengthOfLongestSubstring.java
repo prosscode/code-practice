@@ -5,7 +5,7 @@ import java.util.Set;
 
 /**
  * @describe: 无重复字符的最长子串
- * @author: 彭爽 pross.peng
+ * @author:  shuang.peng
  * @date: 2020/08/12
  */
 public class LengthOfLongestSubstring {

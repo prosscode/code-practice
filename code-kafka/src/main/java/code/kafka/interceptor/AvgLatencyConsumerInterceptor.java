@@ -10,7 +10,7 @@ import java.util.Map;
 
 /**
  * @describe: 消费者拦截器
- * @author: 彭爽 pross.peng
+ * @author:  shuang.peng
  * @date: 2020/05/07
  */
 public class AvgLatencyConsumerInterceptor implements ConsumerInterceptor<String,String> {

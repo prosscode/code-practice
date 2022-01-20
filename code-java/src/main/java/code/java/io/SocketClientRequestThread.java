@@ -8,7 +8,7 @@ import java.util.concurrent.CountDownLatch;
 
 /**
  * @describe: 客户端执行代码
- * @author: 彭爽 pross.peng
+ * @author:  shuang.peng
  * @date: 2020/07/05
  */
 public class SocketClientRequestThread implements Runnable{

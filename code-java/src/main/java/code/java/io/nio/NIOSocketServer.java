@@ -9,7 +9,7 @@ import java.net.SocketTimeoutException;
 
 /**
  * @describe: 服务器端（NIOSocketServer）单个线程处理
- * @author: 彭爽 pross.peng
+ * @author:  shuang.peng
  * @date: 2020/07/06
  */
 public class NIOSocketServer {

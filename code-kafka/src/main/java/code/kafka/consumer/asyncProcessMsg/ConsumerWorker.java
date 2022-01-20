@@ -8,7 +8,7 @@ import java.util.Map;
 
 /**
  * @describe: Kafka Consumer多线程消费
- * @author: 彭爽 pross.peng
+ * @author:  shuang.peng
  * @date: 2020/05/06
  */
 public class ConsumerWorker<K,V> implements Runnable {

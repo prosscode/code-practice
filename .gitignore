@@ -33,12 +33,10 @@ hs_err_pid*
 .idea/modules.xml
 .idea/uiDesigner.xml
 .idea/vcs.xml
-code-algo/src/test/
-code-algo/target/classes/log4j.properties
-code-algo/target/generated-sources/
-code-flink/src/test/
-code-java/src/test/
-code-kafka/src/test/
 
-/code-kafka/target/classes/log4j.properties
-/code-java/target/classes/log4j.properties
+code-algo/target/
+code-flink/target/
+code-java/target/
+code-kafka/target/
+
+

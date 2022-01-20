@@ -6,7 +6,7 @@ import java.util.HashMap;
 /**
  * @describe: 输入一个数组和一个数字，在数组中查找两个数，使得它们的和正好是输入的那个数字。
  * 要求时间复杂度是O(N)。如果有多对数字的和等于输入的数字，输出任意一对即可。
- * @author: 彭爽 pross.peng
+ * @author:  shuang.peng
  * @date: 2020/09/17
  */
 public class TwoSumFindNum {

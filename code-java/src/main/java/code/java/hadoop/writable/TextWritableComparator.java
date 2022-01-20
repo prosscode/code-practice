@@ -8,7 +8,7 @@ import java.io.IOException;
 
 /**
  * @describe:
- * @author: 彭爽pross
+ * @author: pross
  * @date: 2019/05/19
  */
 public class TextWritableComparator extends WritableComparator {

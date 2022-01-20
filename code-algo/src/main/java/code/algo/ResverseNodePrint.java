@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * @describe: 从尾到头打印链表
  * 输入 head = [1,3,2]
  * 输出 [2,3,1]
- * @author: 彭爽 pross.peng
+ * @author:  shuang.peng
  * @date: 2020/09/16
  */
 public class ResverseNodePrint {

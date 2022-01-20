@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-package code.flink.streaming;
+package code.flink.stream;
 
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 

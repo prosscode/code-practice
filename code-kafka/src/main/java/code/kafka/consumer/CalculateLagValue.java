@@ -19,7 +19,7 @@ import java.util.stream.Collectors;
 
 /**
  * @describe: 计算lag值
- * @author: 彭爽 pross.peng
+ * @author:  shuang.peng
  * @date: 2020/08/30
  */
 public class CalculateLagValue {

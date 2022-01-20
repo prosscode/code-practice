@@ -10,7 +10,7 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * @describe: kafka 拦截器，生产者拦截器
  *      需求：业务消息从被生产出来到最后被消费的平均总时长是多少，统计端到端的平均延时
- * @author: 彭爽 pross.peng
+ * @author:  shuang.peng
  * @date: 2020/05/07
  */
 public class AvgLatencyProducerInterceptor  implements ProducerInterceptor<String,String> {

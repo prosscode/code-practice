@@ -14,7 +14,7 @@ import java.util.Random;
 /**
  * @describe: hadoop jar xxx.jar SequenceWriteTest
  *      sequence file 对小文件记性存储和计算，将若干个小文件合并为一个大文件进行存储
- * @author: 彭爽pross
+ * @author: pross
  * @date: 2019/05/19
  */
 public class SequenceWriteTest {

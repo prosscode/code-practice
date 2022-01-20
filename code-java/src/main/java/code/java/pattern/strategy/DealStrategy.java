@@ -2,7 +2,7 @@ package code.java.pattern.strategy;
 
 /**
  * @describe: 策略模式 定义策略接口
- * @author: 彭爽 pross.peng
+ * @author:  shuang.peng
  * @date: 2020/04/27
  */
 public interface DealStrategy {

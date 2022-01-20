@@ -7,7 +7,7 @@ import java.net.Socket;
 
 /**
  * @describe: 阻塞客户端
- * @author: 彭爽 pross.peng
+ * @author:  shuang.peng
  * @date: 2020/07/05
  */
 public class SocketClient1 {

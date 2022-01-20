@@ -12,7 +12,7 @@ import java.io.IOException;
 
 /**
  * @describe: sequence file 读操作
- * @author: 彭爽pross
+ * @author: pross
  * @date: 2019/05/19
  */
 public class SequenceReadTest {
