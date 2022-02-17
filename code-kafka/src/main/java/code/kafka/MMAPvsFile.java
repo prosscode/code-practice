@@ -1,4 +1,4 @@
-package code.java.mmap;
+package code.kafka;
 
 import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
