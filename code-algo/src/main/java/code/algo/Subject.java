@@ -1,7 +1,6 @@
 package code.algo;
 
 import org.junit.Test;
-import scala.Int;
 
 import java.util.ArrayList;
 import java.util.List;

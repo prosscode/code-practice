@@ -2,7 +2,6 @@ package code.algo.tree;
 
 import org.junit.Test;
 
-import java.util.HashMap;
 import java.util.LinkedList;
 
 /**
@@ -17,22 +16,21 @@ import java.util.LinkedList;
  */
 public class BinaryTree {
 
-    // 前/中/后遍历，递归方式
+    // 前/中/后序遍历，递归方式
     @Test
     public void preOrder(){
         TreeNode leftNode = new TreeNode(2,null,null);
         TreeNode rightNode = new TreeNode(3,null,null);
         TreeNode root = new TreeNode(1, leftNode, rightNode);
         getPreNode(root);
-        HashMap<Object, Object> map = new HashMap<>();
     }
 
-    void getPreNode(TreeNode node){
+    static void getPreNode(TreeNode node){
         if(node == null){
             return;
         }
         getPreNode(node.left);
-        // 打印root节点
+        // 中序遍历
         System.out.println(node.val);
         getPreNode(node.right);
     }

@@ -5,9 +5,8 @@ import org.junit.Test;
 /**
  * @Date 2022/2/20
  * @Author by shuang.peng
- * @Description BinarySearchTree
- * 二叉查找树，又称二叉搜索树，
- * 为了实现快速查找，支持快速查找一个数据和快速插入、删除一个数据。
+ * @Description BinarySearchTree 二叉查找树，又称二叉搜索树，
+ * 支持快速查找一个数据和快速插入、删除一个数据。
  * 要求：
  * 在树中的任意一个节点，其左子树中的每个节点的值，都要小于这个节点的值，而右子树节点的值都大于这个节点的值。
  */
@@ -70,52 +69,52 @@ public class BinarySearchTree {
      */
     @Test
     public void deleteNumber() {
-        TreeNode right3Node = new TreeNode(6, null, null);
-        TreeNode right2Node = new TreeNode(5, null, right3Node);
-        TreeNode leftNode = new TreeNode(2, null, null);
+        TreeNode right5Node = new TreeNode(7, null, null);
+        TreeNode right4Node = new TreeNode(6, null, right5Node);
+        TreeNode left4Node = new TreeNode(4, null, right4Node);
+        TreeNode right2Node = new TreeNode(5, left4Node, null);
+        TreeNode leftNode = new TreeNode(1, null, null);
         TreeNode rightNode = new TreeNode(3, null, right2Node);
-        TreeNode root = new TreeNode(1, leftNode, rightNode);
-
+        TreeNode root = new TreeNode(2, leftNode, rightNode);
+//        TreeNode root = new TreeNode(0, null, null);
         // 先找到要删除的节点
-        TreeNode deleteNode = new TreeNode(5,null,null);
+        TreeNode deleteNode = new TreeNode(3,null,null);
         // 查找的节点
-        TreeNode node = null;
-        // 查找的父节点
+        TreeNode node = root;
+        // 查找节点的父节点
         TreeNode pNode = null;
-        while (root != null) {
-            pNode = root;
-            if (root.val > deleteNode.val) {
-                root = root.left;
-            }else if(root.val < deleteNode.val) {
-                root = root.right;
-            }else {
-                node = root;
-                break;
+        while (node != null && node.val != deleteNode.val) {
+            pNode = node;
+            if (node.val > deleteNode.val) {
+                node = node.left;
+            } else if (node.val < deleteNode.val) {
+                node = node.right;
             }
         }
-        if (node == null) {
+
+        if(node == null){
             return;
         }
 
         // 要删除的节点有两个子节点
         if (node.left != null && node.right != null) {
             // 找到节点的右子节点中的最小节点
-            TreeNode pMinRight = node;
-            TreeNode minRight = node.right;
-            while (rightNode != null) {
-                if (rightNode.left != null) {
-                    pMinRight = rightNode;
-                    rightNode = rightNode.left;
-                }
-                // 替换
-                node.val = minRight.val;
-                node = minRight;
-                pNode = pMinRight;
+            TreeNode minNode = node.right;
+            TreeNode pMinNode = node;
+            while (minNode.left != null) {
+                minNode = minNode.left;
+                pMinNode = minNode;
             }
+            // 找到了就替换值
+            node.val = minNode.val;
+            // 指向其它对象
+            node = minNode;
+            pNode = pMinNode;
         }
 
         // 要删除的节点只有一个节点
-        TreeNode child; // p的子节点
+        // 可能是node只有一个子节点，可能是minNode节点的子节点(minNode只有右子节点)
+        TreeNode child;
         if (node.left != null) {
             child = node.left;
         } else if (node.right != null) {
@@ -124,13 +123,44 @@ public class BinarySearchTree {
             child = null;
         }
 
-        // // 删除的是根节点
+
         if (pNode == null) {
-            node = child;
+            // 删除的是根节点
+            root = child;
         } else if (pNode.left == node) {
             pNode.left = child;
         } else {
             pNode.right = child;
         }
+
+        BinaryTree.getPreNode(root);
+        System.out.println("===");
+        BinaryTree.getPreNode(pNode);
+
     }
+
+    // 查找最大节点和最小节点
+    @Test
+    public void findMaxOrMinNode() {
+        TreeNode right3Node = new TreeNode(6, null, null);
+        TreeNode left4Node = new TreeNode(4, null, null);
+        TreeNode right2Node = new TreeNode(5, left4Node, right3Node);
+        TreeNode leftNode = new TreeNode(1, null, null);
+        TreeNode rightNode = new TreeNode(3, null, right2Node);
+        TreeNode root = new TreeNode(2, leftNode, rightNode);
+
+        TreeNode node = root;
+        while (node.left != null) {
+            node = node.left;
+        }
+        System.out.println("min node value: "+node.val);
+
+        TreeNode node1 = root;
+        while (node1.right != null) {
+            node1 = node1.right;
+        }
+        System.out.println("max node value: "+node1.val);
+    }
+
+
 }
