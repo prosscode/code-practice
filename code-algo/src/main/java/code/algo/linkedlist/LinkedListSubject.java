@@ -9,7 +9,6 @@ import org.junit.Test;
  */
 public class LinkedListSubject {
 
-
     // 链表合并排序
     @Test
     public void mergeLinkedList(){
@@ -27,7 +26,6 @@ public class LinkedListSubject {
         LinkedList s3 = new LinkedList(3, s4);
         LinkedList s2 = new LinkedList(2, s3);
         LinkedList s1 = new LinkedList(1, s2);
-
 
 
     }
