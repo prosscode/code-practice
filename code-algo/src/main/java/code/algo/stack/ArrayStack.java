@@ -2,6 +2,8 @@ package code.algo.stack;
 
 
 import java.util.Arrays;
+import java.util.Queue;
+import java.util.Stack;
 
 /**
  * @Date 2022/2/21
@@ -22,6 +24,8 @@ public class ArrayStack {
         this.items = new String[n];
         this.n = n;
         this.count = 0;
+        Stack<Object> stack = new Stack<>();
+        String valueOf = String.valueOf(12);
     }
 
     // 入栈操作

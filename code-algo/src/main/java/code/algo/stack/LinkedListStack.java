@@ -1,7 +1,5 @@
 package code.algo.stack;
 
-import java.util.LinkedList;
-
 /**
  * @Date 2022/2/21
  * @Author by shuang.peng
