@@ -1,5 +1,7 @@
 package code.algo;
 
+import java.util.Stack;
+
 /**
  * @date 2022/2/18
  * @created by shuang.peng
@@ -8,7 +10,7 @@ package code.algo;
 public class BSearch {
 
     // 循环实现
-    int bsearch(int[] a, int value) {
+    int bSearch(int[] a, int value) {
         int low = 0;
         int high = a.length - 1;
 

@@ -6,9 +6,9 @@ package code.algo.linkedlist;
  * @Author by shuang.peng
  * @Description 排序两个有序链表
  */
-public class SortLinkedList {
+public class MergeSortLinkedList {
 
-    static ListNode sortLinkedList(ListNode node1, ListNode node2) {
+    static ListNode mergeLinkedList(ListNode node1, ListNode node2) {
         if (node1 == null) {
             return node2;
         }
@@ -16,7 +16,7 @@ public class SortLinkedList {
             return node1;
         }
         ListNode res = node1.val < node2.val ? node1 : node2;
-        res.next = sortLinkedList(res.next, node1.val >= node2.val ? node1 : node2);
+        res.next = mergeLinkedList(res.next, node1.val >= node2.val ? node1 : node2);
         return res;
     }
 
@@ -34,7 +34,7 @@ public class SortLinkedList {
         ListNode list3 = new ListNode(3, list2);
         ListNode list4 = new ListNode(1, list3);
 
-        ListNode sortLinkedList = sortLinkedList(list4, node4);
+        ListNode sortLinkedList = mergeLinkedList(list4, node4);
         while(sortLinkedList!=null){
             System.out.println(sortLinkedList.val);
             sortLinkedList = sortLinkedList.next;
