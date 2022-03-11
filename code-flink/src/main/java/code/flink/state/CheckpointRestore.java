@@ -21,7 +21,7 @@ import java.util.Objects;
  * @Description 从savepoint恢复数据
  * @Created by shuang.peng
  */
-public class CheckpointRestoreMain {
+public class CheckpointRestore {
 
     public static void main(String[] args) throws Exception {
         // 初始化环境
