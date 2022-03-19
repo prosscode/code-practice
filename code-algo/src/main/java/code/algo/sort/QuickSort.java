@@ -1,5 +1,8 @@
 package code.algo.sort;
 
+import java.util.Collections;
+import java.util.List;
+
 /**
  * @Date 2022/3/6
  * @Author by shuang.peng
@@ -31,21 +34,23 @@ public class QuickSort {
     }
 
     private static int partition(int[] arr, int left, int right) {
-        // 随机选择分区点pivot
-        int pivot = left;
-        int index = left + 1;
-        for (int i = index; i <= right; i++) {
-            // 基于pivot元素比较，进行换边
-            if (arr[i] < arr[pivot]) {
-                swap(arr, i, index);
-                index++;
+        int pivot = arr[right];
+        int i = left;
+        for(int j = left; j < right; ++j) {
+            // 如果遍历的值小于pivot，如果索引值不相等，则交换位置
+            if (arr[j] < pivot) {
+                if (i == j) {
+                    ++i;
+                } else {
+                    swap(arr,i++,j);
+                }
             }
         }
-        swap(arr, pivot, index - 1);
-        return index - 1;
+        swap(arr,i,right);
+        return i;
     }
 
-    // 元素交换，冒泡
+    // 元素交换
     private static void swap(int[] arr, int i, int index) {
         int temp = arr[i];
         arr[i] = arr[index];

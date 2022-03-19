@@ -1,7 +1,7 @@
 package code.algo;
 
-import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Stack;
 
 /**
  * @describe: 输入一个数组和一个数字，在数组中查找两个数，使得它们的和正好是输入的那个数字。
@@ -24,14 +24,13 @@ public class TwoSumFindNum {
     }
 
     public static void main(String[] args) {
-//        int[] ints = new int[]{1,2,4,7,11,15};
-//        int sum = 16;
-//        twoSum1(ints,sum);
+        String str="hello  world  pross.";
+        String[] split = str.split("\\s");
+        for (int i = split.length-1; i >= 0; i--) {
+            System.out.println(split[i]);
+        }
+        Stack<Object> stack = new Stack<>();
 
-        HashMap<Object, Object> map = new HashMap<>();
-        map.put(1,2);
-        boolean value = map.containsValue(2);
-        System.out.println(value);
 
     }
 }

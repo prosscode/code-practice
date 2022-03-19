@@ -1,5 +1,8 @@
 package code.algo.sort;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 /**
  * @date 2022/2/28
  * @created by shuang.peng
@@ -13,6 +16,7 @@ package code.algo.sort;
 public class BubbleSort {
 
     static int[] sort(int[] arr) {
+        ArrayList<Object> list = new ArrayList<>();
         if (arr.length < 2) {
             return arr;
         }
