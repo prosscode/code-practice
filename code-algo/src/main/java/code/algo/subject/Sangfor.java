@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * @Date 2022/3/17
  * @Author by shuang.peng
- * @Description 数组去重，子数组分别去重
+ * @Description 数组中的相邻元素或子数组去重
  */
 public class Sangfor {
 

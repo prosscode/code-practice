@@ -1,4 +1,4 @@
-package code.algo;
+package code.algo.slidingwindow;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -8,7 +8,7 @@ import java.util.Set;
  * @author:  shuang.peng
  * @date: 2020/08/12
  */
-public class LengthOfLongestSubstring {
+public class LongestSubstring {
 
     /**
      * 给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。
@@ -33,18 +33,18 @@ public class LengthOfLongestSubstring {
      * @param s
      * @return
      */
-    public int lengthOfLongestSubstring(String s) {
-        // 解法:窗口滑动
+    public static int lengthOfLongestSubstring(String s) {
+        // 窗口滑动
         int res = 1;
         Set<Character> set = new HashSet<>();
-        if(s.length()<2){
+        if (s.length() < 2) {
             return s.length();
         }
 
-        // 双指针 "abcabcbb"
-        for(int l = 0, r = 0; r < s.length(); r++) {
+        // 双指针。如果存在重复字符，则左指针右移
+        for (int l = 0, r = 0; r < s.length(); r++) {
             char c = s.charAt(r);
-            while(set.contains(c)) {
+            while (set.contains(c)) {
                 // 存在则前移动指针
                 set.remove(s.charAt(l++));
             }
@@ -52,6 +52,11 @@ public class LengthOfLongestSubstring {
             res = Math.max(res, r - l + 1);
         }
         return res;
+    }
+
+    public static void main(String[] args) {
+        String str="abcdedabcbb";
+        System.out.println(lengthOfLongestSubstring(str));
     }
 
 }
