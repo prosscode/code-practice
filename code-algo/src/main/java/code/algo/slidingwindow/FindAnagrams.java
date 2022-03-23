@@ -1,6 +1,8 @@
 package code.algo.slidingwindow;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -43,6 +45,12 @@ public class FindAnagrams {
             System.out.println(anagram);
         }
 
-    }
+        char[] char1 = {'a', 'b', 'c'};
+        char[] char2 = {'b', 'a', 'c'};
+        System.out.println(Arrays.equals(char1,char2));
 
+        LinkedList<Object> list = new LinkedList<>();
+        list.poll();
+        list.peekLast();
+    }
 }
