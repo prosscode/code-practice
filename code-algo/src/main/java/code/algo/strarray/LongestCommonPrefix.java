@@ -1,4 +1,4 @@
-package code.algo;
+package code.algo.strarray;
 
 /**
  * @describe: 最长公共前缀

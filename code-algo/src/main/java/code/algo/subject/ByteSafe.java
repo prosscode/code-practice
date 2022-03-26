@@ -42,14 +42,13 @@ public class ByteSafe {
             }
         } else {
             int anInt = Integer.parseInt(str);
-            if(anInt <=500){
+            if (anInt <= 500) {
                 String tmp = init;
-                tmp+=","+anInt;
-                System.out.println(tmp.replaceFirst(",",""));
-            }else{
+                tmp += "," + anInt;
+                System.out.println(tmp.replaceFirst(",", ""));
+            } else {
                 return;
             }
         }
-
     }
 }
