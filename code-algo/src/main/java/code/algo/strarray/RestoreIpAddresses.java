@@ -1,9 +1,7 @@
 package code.algo.strarray;
 
-import org.checkerframework.checker.units.qual.A;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @describe:
@@ -22,26 +20,28 @@ public class RestoreIpAddresses {
     public static ArrayList<String> res;
 
     public void restoreIpAddresses(String str, int seg, String init) {
-        if (seg > 4) {
+        if (seg > 3) {
             return;
-        } else if (seg < 4) {
+        } else if (seg < 3) {
             int length = str.length();
             for (int i = 1; i <= 3; i++) {
+                if (i > str.length()) return;
                 String substring = str.substring(0, i);
                 int anInt = Integer.parseInt(substring);
-                if (anInt < 255 && substring.charAt(0)!='0') {
+                if (anInt <= 255 && substring.charAt(0)!='0') {
                     String tmp = init;
-                    tmp += "." + anInt;
-                    restoreIpAddresses(str.substring(i, length), seg + 1, tmp);
+                    tmp += "." + substring;
+                    restoreIpAddresses(str.substring(i,length), seg + 1, tmp);
                 } else {
                     return;
                 }
             }
         } else {
+            if (str.length() == 0) return;
             int anInt = Integer.parseInt(str);
-            if(anInt < 255 && str.charAt(0)!='0'){
+            if (anInt <= 255 && str.charAt(0) != '0') {
                 String tmp = init;
-                tmp += "." + anInt;
+                tmp += "." + str;
                 res.add(tmp.replaceFirst(".",""));
             }
         }
@@ -54,5 +54,8 @@ public class RestoreIpAddresses {
         for (String re : res) {
             System.out.println(re);
         }
+
+        String join = String.join(".", "0000");
+        System.out.println(join);
     }
 }
