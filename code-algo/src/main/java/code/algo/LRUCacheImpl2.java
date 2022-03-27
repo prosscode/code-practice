@@ -67,6 +67,7 @@ public class LRUCacheImpl2 {
         head.next=dLinkedNode;
         return dLinkedNode.value;
     }
+
     // put操作
     boolean put(int key,int value){
         DLinkedNode node = cache.get(key);
@@ -100,20 +101,6 @@ public class LRUCacheImpl2 {
             head.next=node;
         }
         return true;
-    }
-    private void moveToHead(DLinkedNode node) {
-        removeNode(node);
-        addToHead(node);
-    }
-    private void addToHead(DLinkedNode node) {
-        node.prev = head;
-        node.next = head.next;
-        head.next.prev = node;
-        head.next = node;
-    }
-    private void removeNode(DLinkedNode node) {
-        node.prev.next = node.next;
-        node.next.prev = node.prev;
     }
 
     // 双向链表结构
