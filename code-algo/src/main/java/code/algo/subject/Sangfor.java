@@ -1,7 +1,5 @@
 package code.algo.subject;
 
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @Date 2022/3/17
@@ -10,52 +8,32 @@ import java.util.List;
  */
 public class Sangfor {
 
-    static List<Integer> distinct(List<Integer> list){
-        ArrayList<Integer> tmp = new ArrayList<>();
-        tmp.add(list.get(0));
-        for (int i = 1; i < list.size(); i++) {
-            if(list.get(i)==list.get(i-1)){
-                continue;
-            }else{
-                tmp.add(list.get(i));
-            }
-        }
-        return tmp;
-    }
-
-    static List<Integer> windowSet(ArrayList<Integer> list) {
-        // 滑动窗口
-        if (list.size() > 3) {
-            // 控制左边界
-            for (int i = 0; i < list.size(); i++) {
-                // 控制窗口大小
-                for (int j = 2; j < list.size() / 2;j++) {
-                    // 比较是否重复
+    static String distinct(String str){
+        // 思路
+        // 增加窗口大小，范围[0,list.size()/2]
+        // 窗口划定后，前后比较子数组是否相同
+        // 相等就切割
+        for (int window = 1; window <= str.length() / 2; window++) {
+            StringBuilder builder = new StringBuilder();
+            int i = 0;
+            while (i + window < str.length()) {
+                String s1 = str.substring(i, i + window);
+                String s2 = str.substring(i + window, i + window * 2);
+                if (s1.equals(s2)) {
+                    i += window * 2;
+                }else{
+                    i += window;
                 }
-
+                builder.append(s1);
             }
-        } else {
-            return list;
+            str=builder.toString();
         }
-        return null;
+        return str;
     }
 
     public static void main(String[] args) {
-        ArrayList<Integer> list = new ArrayList<>();
-        list.add(1);
-        list.add(2);
-        list.add(3);
-        list.add(3);
-        list.add(1);
-        list.add(2);
-        list.add(3);
-        list.add(2);
-        list.add(3);
-        list.add(2);
-        list.add(3);
-        List<Integer> distinct = distinct(list);
-        for (Integer integer : distinct) {
-            System.out.println(integer);
-        }
+        String str="12331232323";
+        String distinct = distinct(str);
+        System.out.println(distinct);
     }
 }

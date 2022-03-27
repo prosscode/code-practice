@@ -3,6 +3,7 @@ package code.java.calcite;
 import org.apache.calcite.config.Lex;
 import org.apache.calcite.sql.SqlNode;
 import org.apache.calcite.sql.parser.SqlParseException;
+import org.apache.calcite.sql2rel.SqlToRelConverter;
 
 import static code.java.calcite.SqlTableParse.parseTableNode;
 

@@ -22,6 +22,7 @@ public class ByteSafe {
         for (String s : result) {
             System.out.println(s);
         }
+        str.substring(0,1);
     }
 
     public static void getAllNums(String str, int n, List<String> result, String init) {

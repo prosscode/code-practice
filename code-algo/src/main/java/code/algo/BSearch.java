@@ -1,6 +1,5 @@
 package code.algo;
 
-import java.util.Stack;
 
 /**
  * @date 2022/2/18
