@@ -8,13 +8,14 @@ import java.util.*;
  * @Description CommonRandom
  */
 public class Lottery {
+
     public static void main(String[] args) {
 
         List<Box> boxes = new ArrayList<>();
         // 序号==物品Id==物品名称==概率
-        boxes.add(new Box(1, "P1", "物品1", 0.6d));
-        boxes.add(new Box(2, "P2", "物品2", 0.2d));
-        boxes.add(new Box(3, "P3", "物品3", 0.1d));
+        boxes.add(new Box(1, "P1", "物品1", 0.4d));
+        boxes.add(new Box(2, "P2", "物品2", 0.3d));
+        boxes.add(new Box(3, "P3", "物品3", 0.2d));
         boxes.add(new Box(4, "P4", "物品4", 0.002d));
         boxes.add(new Box(5, "P5", "物品5", 0d));
         boxes.add(new Box(6, "P6", "物品6", -0.1d));
@@ -31,7 +32,7 @@ public class Lottery {
 
         // statistics
         Map<Integer, Integer> count = new HashMap<>();
-        double num = 100;
+        double num = 10000000;
         for (int i = 0; i < num; i++) {
             int orignalIndex = LotteryUtil.lottery(orignalRates);
 
@@ -58,30 +59,6 @@ class Box {
         this.boxId = boxId;
         this.boxName = boxName;
         this.probability = probability;
-    }
-
-    public int getIndex() {
-        return index;
-    }
-
-    public void setIndex(int index) {
-        this.index = index;
-    }
-
-    public String getBoxId() {
-        return boxId;
-    }
-
-    public void setBoxId(String boxId) {
-        this.boxId = boxId;
-    }
-
-    public String getBoxName() {
-        return boxName;
-    }
-
-    public void setBoxName(String boxName) {
-        this.boxName = boxName;
     }
 
     public double getProbability() {
@@ -127,35 +104,7 @@ class LotteryUtil {
         for (double rate : orignalRates) {
             tempSumRate += rate;
             sortOrignalRates.add(tempSumRate / sumRate);
-        }
-
-        // 根据区块值来获取抽取到的物品索引
-        double nextDouble = Math.random();
-        sortOrignalRates.add(nextDouble);
-        Collections.sort(sortOrignalRates);
-
-        return sortOrignalRates.indexOf(nextDouble);
-    }
-
-    public static int getJD(List<Double> orignalRates) {
-        if (orignalRates == null || orignalRates.isEmpty()) {
-            return -1;
-        }
-
-        int size = orignalRates.size();
-
-        // 计算总概率，这样可以保证不一定总概率是1
-        double sumRate = 0d;
-        for (double rate : orignalRates) {
-            sumRate += rate;
-        }
-
-        // 计算每个物品在总概率的基础下的概率情况
-        List<Double> sortOrignalRates = new ArrayList<Double>(size);
-        Double tempSumRate = 0d;
-        for (double rate : orignalRates) {
-            tempSumRate += rate;
-            sortOrignalRates.add(tempSumRate / sumRate);
+//            sortOrignalRates.add(rate / sumRate);
         }
 
         // 根据区块值来获取抽取到的物品索引
